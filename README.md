@@ -38,6 +38,21 @@ En caso de que se desee actualizar los requerimientos: `pip freeze > requirement
 
 Esto restablecerá el prompt de la línea de comandos a su estado original y dejará de usar el entorno virtual.
 
+## Levantamos docker mysql
+```
+docker run -d --name my-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -v mcd-ejemplo-twitter:/var/lib/mysql mysql:latest
+```
+entramos a mysql
+```
+docker exec -it my-mysql mysql -u root -p 
+```
+creamos la base de datos 
+```
+CREATE DATABASE tweets;
+USE tweets
+```
+
+
 ## Preparamos la BBDD Relacional.
 -  A continuación el código SQL para crear las tablas en una base de datos MySQL:
 

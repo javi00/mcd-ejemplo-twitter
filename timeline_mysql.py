@@ -29,7 +29,7 @@ def get_user_timeline(connection, user_id):
     return timeline
 
 if __name__ == "__main__":
-    connection = connect_to_database("localhost", "root", "123456", "twitter")
+    connection = connect_to_database("localhost", "root", "123456", "tweets")
     user_id = int(sys.argv[1])
     timeline = get_user_timeline(connection, user_id)
     
