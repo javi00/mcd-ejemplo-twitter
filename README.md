@@ -189,3 +189,12 @@ ORDER BY timestamp DESC;
 ## Primera aproximación
 
 En el archivo twitter_mysql.py se tiene la lógica tradicional de acceso.
+
+
+
+## Redis
+
+```
+docker run -d -p 6379:6379 --name my-redis redis
+
+```
