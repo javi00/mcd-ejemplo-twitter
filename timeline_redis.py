@@ -25,13 +25,14 @@ def get_user_timeline(connection, user_id):
     key = f"timeline_{user_id}"
 
     timeline = r.lrange(key, 0, -1)
+    # print(timeline)
 
     if timeline:
-        print("El timeline esta en CACHE")
+        print("El timeline ESTA en CACHE")
         # Si el timeline es distinto de null, entonces este es un string que representa un JSON
         return [json.loads(tweet) for tweet in timeline][0]
     else :
-        print("El timeline no esta en CACHE")
+        print("El timeline NO esta en CACHE")
         # Consultamos a la BBDD del usuario por el timeline y lo almacenamos en CACHE
         with connection.cursor() as cursor:
             # Obtenemos los usuarios que sigue
