@@ -198,3 +198,11 @@ En el archivo twitter_mysql.py se tiene la lógica tradicional de acceso.
 docker run -d -p 6379:6379 --name my-redis redis
 
 ```
+
+
+para navegar en redis:
+
+```
+docker exec -it my-redis redis-cli
+
+```

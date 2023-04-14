@@ -1,5 +1,7 @@
 import pymysql
 import sys
+import redis
+
 
 def connect_to_database(host, user, password, db_name):
     connection = pymysql.connect(
@@ -20,7 +22,7 @@ def write_tweet(connection, user_id, tweet):
     print ("Tweet enviado")
 
 if __name__ == "__main__":
-    connection = connect_to_database("localhost", "root", "123456", "twitter")
+    connection = connect_to_database("localhost", "root", "123456", "tweets")
     user_id = int(sys.argv[1])
     tweet = sys.argv[2]
     write_tweet(connection, user_id, tweet)
